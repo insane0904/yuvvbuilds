@@ -175,7 +175,7 @@ const Navigation = () => {
 
       {/* Progress Indicator */}
       <div className={styles.progressContainer}>
-        {navLinks.map((link, index) => (
+        {navLinks.map((link) => (
           <motion.button
             key={link.id}
             className={`${styles.progressDot} ${activeSection === link.id ? styles.activeDot : ''}`}
