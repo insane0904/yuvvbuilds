@@ -159,7 +159,7 @@ const Hero = () => {
           <motion.div 
             className={styles.heroGondola}
             animate={{ x: ['0%', '100%', '0%'] }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 13, repeat: Infinity, ease: "linear" }}
           />
         </div>
 
@@ -309,56 +309,6 @@ const Hero = () => {
           <Slider />
         </motion.div>
       </div>
-
-      {/* Scroll Indicator - Desktop: Mouse, Mobile: Swipe */}
-      <motion.div 
-        className={styles.scrollIndicator}
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 2 }}
-      >
-        {/* Desktop Mouse Indicator */}
-        <div className={styles.desktopScroll}>
-          <div className={styles.scrollMouse}>
-            <motion.div 
-              className={styles.scrollDot}
-              animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
-          <motion.div 
-            className={styles.scrollLine}
-            animate={{ scaleY: [1, 0.5, 1], opacity: [0.4, 0.2, 0.4] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </div>
-        
-        {/* Mobile Swipe Indicator */}
-        <div className={styles.mobileScroll}>
-          <motion.div 
-            className={styles.swipeHand}
-            animate={{ y: [0, -12, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            👆
-          </motion.div>
-          <motion.span 
-            className={styles.swipeText}
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            Swipe up
-          </motion.span>
-        </div>
-      </motion.div>
-
-      {/* Easter Egg - Hidden element */}
-      <motion.div 
-        className={styles.easterEgg}
-        whileHover={{ scale: 1.5, rotate: 360 }}
-        whileTap={{ scale: 2 }}
-        title="You found me! 🎉"
-      />
 
       {/* Corner Decorations */}
       <div className={styles.cornerTL} />

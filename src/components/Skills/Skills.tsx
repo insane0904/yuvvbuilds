@@ -44,7 +44,7 @@ const Skills = () => {
       title: "Architecture Student",
       subtitle: "Amity University Mumbai",
       description: "Pursuing comprehensive education in architectural design, construction technology, and urban planning.",
-      year: "2024 - Present"
+      year: "2025 - Present"
     },
     {
       icon: HiOutlineCode,
@@ -72,11 +72,11 @@ const Skills = () => {
     <section className={styles.skills} id="skills" ref={ref}>
       {/* Construction Animations */}
       <div className={styles.constructionScene}>
-        {/* Dump Truck Animation */}
+        {/* Dump Truck Animation - Moving right to left */}
         <motion.div 
           className={styles.dumpTruck}
-          initial={{ x: '-100%' }}
-          animate={{ x: '120vw' }}
+          initial={{ x: '120vw' }}
+          animate={{ x: '-100%' }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         >
           <div className={styles.truckBody} />
@@ -88,12 +88,12 @@ const Skills = () => {
           <div className={styles.truckWheels}>
             <motion.div 
               className={styles.wheel}
-              animate={{ rotate: 360 }}
+              animate={{ rotate: -360 }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
             <motion.div 
               className={styles.wheel}
-              animate={{ rotate: 360 }}
+              animate={{ rotate: -360 }}
               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             />
           </div>

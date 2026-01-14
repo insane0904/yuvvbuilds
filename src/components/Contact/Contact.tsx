@@ -154,7 +154,7 @@ const Contact = () => {
           <motion.div 
             className={styles.contactRopeCabin}
             animate={{ x: ['0%', '100%', '0%'] }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 13, repeat: Infinity, ease: "linear" }}
           />
         </div>
       </div>

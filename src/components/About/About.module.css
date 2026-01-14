@@ -485,6 +485,35 @@
   color: var(--color-medium-gray);
 }
 
+/* Spline 3D Container */
+.splineContainer {
+  width: 100%;
+  height: 400px;
+  margin-top: 4rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.8), rgba(10, 10, 10, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.splineContainer canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.splineLoader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+}
+
 /* Blueprint Corner Decoration */
 .blueprintCorner {
   position: absolute;
@@ -617,6 +646,11 @@
   .patternRight {
     width: 25%;
     opacity: 0.3;
+  }
+
+  .splineContainer {
+    height: 280px;
+    margin-top: 2.5rem;
   }
 }
 

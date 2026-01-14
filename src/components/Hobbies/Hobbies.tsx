@@ -143,12 +143,12 @@ const Hobbies = () => {
           <motion.div 
             className={styles.gondola}
             animate={{ x: ['0%', '100%', '0%'] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 13, repeat: Infinity, ease: "linear" }}
           />
           <motion.div 
             className={styles.gondola2}
             animate={{ x: ['100%', '0%', '100%'] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 13, repeat: Infinity, ease: "linear" }}
           />
         </div>
       </div>
