@@ -1,10 +1,7 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef, Suspense, lazy } from 'react';
+import { useRef } from 'react';
 import { HiOutlineCube, HiOutlinePencil, HiOutlineCollection, HiOutlineChartBar } from 'react-icons/hi';
 import styles from './About.module.css';
-
-// Lazy load Spline for better performance
-const Spline = lazy(() => import('@splinetool/react-spline'));
 
 const About = () => {
   const ref = useRef(null);
@@ -225,18 +222,6 @@ const About = () => {
             experiences, defining moments, and building the framework of human life.
           </blockquote>
           <div className={styles.quoteAuthor}>— My Philosophy</div>
-        </motion.div>
-
-        {/* 3D Spline Element */}
-        <motion.div 
-          className={styles.splineContainer}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          <Suspense fallback={<div className={styles.splineLoader}>Loading 3D...</div>}>
-            <Spline scene="https://prod.spline.design/dVb0XIn-u8gn5szD/scene.splinecode" />
-          </Suspense>
         </motion.div>
       </div>
 
