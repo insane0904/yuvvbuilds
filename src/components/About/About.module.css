@@ -1,0 +1,533 @@
+.about {
+  min-height: 100vh;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  overflow: hidden;
+}
+
+/* Construction Scene */
+.constructionScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Ropeway Animation */
+.ropeway {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+}
+
+.ropewayLine {
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+}
+
+.ropewayCabin {
+  position: absolute;
+  top: 12px;
+  left: 10%;
+  width: 20px;
+  height: 16px;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.ropewayCabin::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 8px;
+  background: rgba(255,255,255,0.2);
+}
+
+.ropewayTower {
+  position: absolute;
+  bottom: 0;
+  width: 4px;
+  height: 50px;
+  background: linear-gradient(to top, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+}
+
+.ropewayTower::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 16px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Building Being Constructed */
+.constructingBuilding {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  width: 50px;
+  height: 120px;
+}
+
+.buildingFrame {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to top, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.1);
+  transform-origin: bottom;
+}
+
+.buildingWindows {
+  position: absolute;
+  bottom: 10px;
+  left: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.window {
+  width: 12px;
+  height: 14px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Mini Crane */
+.miniCrane {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  width: 60px;
+  height: 100px;
+}
+
+.miniCraneTower {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 80px;
+  background: linear-gradient(to top, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+}
+
+.miniCraneArm {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+  transform-origin: left center;
+}
+
+.miniCraneArm::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 3px;
+  width: 1px;
+  height: 25px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Background Patterns */
+.patternLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
+  mask-image: linear-gradient(to right, black, transparent);
+}
+
+.patternRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.5;
+  mask-image: linear-gradient(to left, black, transparent);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionMarker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.markerNumber {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+}
+
+.markerLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-light-gray), transparent);
+}
+
+.markerText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--color-light-gray);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.titleLine {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+}
+
+.titleAccent {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
+  letter-spacing: 0.15em;
+}
+
+/* Content Grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 5rem;
+}
+
+/* Bio Section */
+.bioSection {
+  display: flex;
+  align-items: flex-start;
+}
+
+.bioCard {
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  padding: 2.5rem;
+  width: 100%;
+}
+
+.bioHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.bioAvatar {
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.bioInfo h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 0.25rem;
+}
+
+.bioInfo p {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-light-gray);
+}
+
+.bioContent {
+  margin-bottom: 2rem;
+}
+
+.bioContent p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-silver);
+  margin-bottom: 1.25rem;
+}
+
+.bioContent p:last-child {
+  margin-bottom: 0;
+}
+
+.bioContent strong {
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.bioStats {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.statLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-medium-gray);
+  text-transform: uppercase;
+}
+
+/* Interests Section */
+.interestsSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.interestsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.interestsHeader h3 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+  white-space: nowrap;
+}
+
+.interestsLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-medium-gray), transparent);
+}
+
+.interestsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.interestCard {
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.interestCard:hover {
+  border-color: rgba(255,255,255,0.2);
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%);
+}
+
+.interestCard:hover .interestIcon {
+  transform: scale(1.1) rotate(5deg);
+  color: var(--color-white);
+}
+
+.interestIcon {
+  color: var(--color-light-gray);
+  margin-bottom: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.interestCard h4 {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.interestCard p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-light-gray);
+}
+
+.interestNumber {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+/* Quote Section */
+.quoteSection {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 0;
+  position: relative;
+}
+
+.quoteMarks {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 0;
+  color: rgba(255,255,255,0.05);
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.quoteSection blockquote {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-silver);
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+.quoteAuthor {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--color-medium-gray);
+}
+
+/* Blueprint Corner Decoration */
+.blueprintCorner {
+  position: absolute;
+  bottom: 5rem;
+  right: 5rem;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+
+.blueprintCorner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.03);
+}
+
+.blueprintCorner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: rgba(255,255,255,0.03);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .interestsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .interestsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bioStats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .blueprintCorner {
+    display: none;
+  }
+}

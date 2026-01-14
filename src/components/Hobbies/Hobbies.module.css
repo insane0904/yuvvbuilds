@@ -1,0 +1,701 @@
+.hobbies {
+  min-height: 100vh;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, #080808 50%, #000000 100%);
+  overflow: hidden;
+}
+
+/* Construction Scene */
+.constructionScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Building Skyline */
+.skyline {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  display: flex;
+  align-items: flex-end;
+  gap: 15px;
+  height: 150px;
+}
+
+.building1,
+.building2,
+.building3 {
+  background: linear-gradient(to top, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  transform-origin: bottom;
+}
+
+.building1 {
+  width: 30px;
+  height: 100px;
+}
+
+.building2 {
+  width: 25px;
+  height: 140px;
+}
+
+.building3 {
+  width: 35px;
+  height: 80px;
+}
+
+.building1::before,
+.building2::before,
+.building3::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  right: 5px;
+  bottom: 10px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 8px,
+    rgba(255,255,255,0.03) 8px,
+    rgba(255,255,255,0.03) 10px
+  );
+}
+
+/* Concrete Mixer Truck */
+.mixerTruck {
+  position: absolute;
+  bottom: 6%;
+  width: 80px;
+  height: 40px;
+}
+
+.mixerCab {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.mixerCab::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 10px;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+}
+
+.mixerDrum {
+  position: absolute;
+  bottom: 10px;
+  left: 22px;
+  width: 45px;
+  height: 30px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 5px 15px 15px 5px;
+}
+
+.mixerDrum::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border: 2px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+}
+
+.mixerWheels {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 20px;
+  left: 5px;
+}
+
+.mixerWheel {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Excavator */
+.excavator {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  width: 80px;
+  height: 60px;
+}
+
+.excavatorBody {
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
+  width: 45px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.excavatorCab {
+  position: absolute;
+  bottom: 32px;
+  left: 35px;
+  width: 20px;
+  height: 18px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.excavatorCab::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+}
+
+.excavatorArm {
+  position: absolute;
+  bottom: 40px;
+  left: 25px;
+  width: 35px;
+  height: 6px;
+  background: rgba(255,255,255,0.15);
+  transform-origin: left center;
+  transform: rotate(-30deg);
+}
+
+.excavatorBucket {
+  position: absolute;
+  right: -12px;
+  top: -2px;
+  width: 15px;
+  height: 12px;
+  background: rgba(255,255,255,0.12);
+  transform-origin: left center;
+  clip-path: polygon(0 0, 100% 30%, 100% 100%, 0 100%);
+}
+
+.excavatorTracks {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  width: 55px;
+  height: 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+}
+
+/* Cable Car / Gondola */
+.cableCar {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.cableLine {
+  position: absolute;
+  top: 8px;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+}
+
+.gondola,
+.gondola2 {
+  position: absolute;
+  top: 10px;
+  left: 5%;
+  width: 18px;
+  height: 20px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.gondola::before,
+.gondola2::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 10px;
+  background: rgba(255,255,255,0.15);
+}
+
+.gondola2 {
+  left: auto;
+  right: 5%;
+}
+
+/* Background Lines */
+.backgroundLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.bgLine {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+  transform-origin: left;
+}
+
+.bgLine:nth-child(1) { top: 10%; }
+.bgLine:nth-child(2) { top: 30%; }
+.bgLine:nth-child(3) { top: 50%; }
+.bgLine:nth-child(4) { top: 70%; }
+.bgLine:nth-child(5) { top: 90%; }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionMarker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.markerNumber {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+}
+
+.markerLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-light-gray), transparent);
+}
+
+.markerText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--color-light-gray);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.titleOutline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-light-gray);
+}
+
+/* Hobbies Grid */
+.hobbiesGrid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+/* Hobby Tabs */
+.hobbyTabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hobbyTab {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hobbyTab::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--color-medium-gray);
+  transition: all 0.3s ease;
+}
+
+.hobbyTab:hover::before,
+.activeTab::before {
+  background: var(--color-white);
+  width: 3px;
+}
+
+.hobbyTab:hover,
+.activeTab {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.tabIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--color-light-gray);
+  transition: all 0.3s ease;
+}
+
+.activeTab .tabIcon {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  background: rgba(255,255,255,0.05);
+}
+
+.tabContent {
+  flex: 1;
+}
+
+.tabContent h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-silver);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.activeTab .tabContent h4 {
+  color: var(--color-white);
+}
+
+.tabLine {
+  width: 0;
+  height: 1px;
+  background: var(--color-white);
+  transition: width 0.3s ease;
+}
+
+.activeTab .tabLine {
+  width: 50px;
+}
+
+.tabNumber {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.1);
+  transition: color 0.3s ease;
+}
+
+.activeTab .tabNumber {
+  color: var(--color-light-gray);
+}
+
+/* Hobby Detail Panel */
+.hobbyDetail {
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3rem;
+  position: relative;
+}
+
+.hobbyDetail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.detailContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detailIcon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.detailHeader h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-white);
+}
+
+.detailDescription {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--color-silver);
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.detailTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* Projects Section */
+.projectsSection {
+  margin-bottom: 4rem;
+}
+
+.projectsHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.projectsHeader h3 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+  white-space: nowrap;
+}
+
+.projectsLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-medium-gray), transparent);
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-5px);
+}
+
+.projectIcon {
+  color: var(--color-light-gray);
+  transition: color 0.3s ease;
+}
+
+.projectCard:hover .projectIcon {
+  color: var(--color-white);
+}
+
+.projectCount {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.projectName {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--color-medium-gray);
+  text-transform: uppercase;
+}
+
+/* Fun Fact */
+.funFact {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+
+.factBadge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.4rem 1rem;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-light-gray);
+}
+
+.funFact p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-silver);
+}
+
+.funFact strong {
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* Corner Decoration */
+.cornerDecor {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cornerDecor span {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+.cornerDecor span:nth-child(1) { width: 100px; }
+.cornerDecor span:nth-child(2) { width: 70px; }
+.cornerDecor span:nth-child(3) { width: 40px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hobbiesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hobbyTabs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .hobbyTabs {
+    grid-template-columns: 1fr;
+  }
+
+  .hobbyTab {
+    padding: 1rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .hobbyDetail {
+    padding: 2rem 1.5rem;
+  }
+
+  .cornerDecor {
+    display: none;
+  }
+}

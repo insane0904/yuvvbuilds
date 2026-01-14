@@ -1,0 +1,664 @@
+.contact {
+  min-height: 100vh;
+  padding: clamp(4rem, 10vw, 8rem) 0 0;
+  position: relative;
+  background: linear-gradient(180deg, #000000 0%, #050505 50%, #000000 100%);
+  overflow: hidden;
+}
+
+/* Construction Scene */
+.constructionScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* City Skyline */
+.citySkyline {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.cityBuilding {
+  background: linear-gradient(to top, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  transform-origin: bottom;
+  position: relative;
+}
+
+.cityBuilding::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 4px;
+  right: 4px;
+  bottom: 8px;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.02) 10px,
+    rgba(255,255,255,0.02) 12px
+  );
+}
+
+/* Final Crane */
+.finalCrane {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 100px;
+  height: 180px;
+}
+
+.finalCraneTower {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 150px;
+  background: linear-gradient(to top, rgba(255,255,255,0.15), rgba(255,255,255,0.03));
+}
+
+.finalCraneTower::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  width: 36px;
+  height: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.finalCraneArm {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+  transform-origin: left center;
+}
+
+.finalCraneArm::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 0;
+  width: 25px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+}
+
+.finalCraneLoad {
+  position: absolute;
+  right: 10px;
+  top: 4px;
+  width: 2px;
+  height: 35px;
+  background: rgba(255,255,255,0.12);
+}
+
+.finalCraneLoad::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -6px;
+  width: 14px;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Material Truck */
+.materialTruck {
+  position: absolute;
+  bottom: 5%;
+  width: 75px;
+  height: 35px;
+}
+
+.materialTruckCab {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 22px;
+  height: 20px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.materialTruckCab::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 7px;
+  background: rgba(255,255,255,0.08);
+}
+
+.materialTruckBed {
+  position: absolute;
+  bottom: 10px;
+  left: 22px;
+  width: 45px;
+  height: 20px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.materials {
+  position: absolute;
+  top: -8px;
+  left: 5px;
+  right: 5px;
+  height: 12px;
+  background: rgba(255,255,255,0.06);
+  clip-path: polygon(0% 100%, 5% 40%, 25% 60%, 50% 30%, 75% 55%, 95% 35%, 100% 100%);
+}
+
+.materialTruckWheels {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  gap: 35px;
+  left: 5px;
+}
+
+.materialWheel {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Contact Ropeway */
+.contactRopeway {
+  position: absolute;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  height: 40px;
+}
+
+.contactRopeLine {
+  position: absolute;
+  top: 5px;
+  left: 8%;
+  width: 84%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+.contactRopeCabin {
+  position: absolute;
+  top: 6px;
+  left: 8%;
+  width: 16px;
+  height: 18px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.contactRopeCabin::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 8px;
+  background: rgba(255,255,255,0.12);
+}
+
+/* Blueprint Lines Background */
+.blueprintLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-around;
+  pointer-events: none;
+}
+
+.line {
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.02), transparent);
+  transform-origin: top;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sectionMarker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.markerNumber {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+}
+
+.markerLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-light-gray), transparent);
+}
+
+.markerText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--color-light-gray);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.titleOutline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-white);
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-light-gray);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Contact Grid */
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.contactCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contactCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-white), transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.contactCard:hover::before {
+  transform: scaleX(1);
+}
+
+.contactCard:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.03) 100%);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardIcon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--color-silver);
+  transition: all 0.3s ease;
+}
+
+.contactCard:hover .cardIcon {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  background: rgba(255,255,255,0.05);
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--color-medium-gray);
+}
+
+.cardContent {
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+.cardValue {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-white);
+  word-break: break-all;
+}
+
+.cardCta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-light-gray);
+  transition: all 0.3s ease;
+}
+
+.contactCard:hover .cardCta {
+  color: var(--color-white);
+}
+
+.contactCard:hover .cardCta svg {
+  transform: translateX(5px);
+}
+
+.cardCta svg {
+  transition: transform 0.3s ease;
+}
+
+.cardCorner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-left: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Location Info */
+.locationInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 4rem;
+  color: var(--color-light-gray);
+  flex-wrap: wrap;
+}
+
+.locationInfo svg {
+  color: var(--color-silver);
+}
+
+.locationInfo span {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.locationLine {
+  width: 40px;
+  height: 1px;
+  background: var(--color-medium-gray);
+}
+
+/* CTA Section */
+.ctaSection {
+  max-width: 800px;
+  margin: 0 auto 5rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+  text-align: center;
+}
+
+.ctaContent h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.ctaContent p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-light-gray);
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: var(--color-white);
+  color: var(--color-black);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: var(--color-off-white);
+}
+
+.ctaArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.ctaPattern {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0.3;
+}
+
+.ctaPattern span {
+  height: 1px;
+  background: var(--color-white);
+}
+
+.ctaPattern span:nth-child(1) { width: 40px; }
+.ctaPattern span:nth-child(2) { width: 30px; }
+.ctaPattern span:nth-child(3) { width: 20px; }
+.ctaPattern span:nth-child(4) { width: 10px; }
+
+/* Footer */
+.footer {
+  background: var(--color-black);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+}
+
+.logoDivider {
+  width: 1px;
+  height: 30px;
+  background: var(--color-medium-gray);
+}
+
+.logoTagline {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--color-medium-gray);
+}
+
+.footerNav {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footerNav a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-light-gray);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.footerNav a:hover {
+  color: var(--color-white);
+}
+
+.footerCopyright {
+  text-align: center;
+}
+
+.footerCopyright p {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-medium-gray);
+  margin-bottom: 0.5rem;
+}
+
+.footerMeta {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--color-gray);
+}
+
+.footerLines {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  display: flex;
+}
+
+.footerLines span {
+  flex: 1;
+  height: 100%;
+}
+
+.footerLines span:nth-child(1) { background: rgba(255,255,255,0.1); }
+.footerLines span:nth-child(2) { background: rgba(255,255,255,0.05); }
+.footerLines span:nth-child(3) { background: rgba(255,255,255,0.02); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .locationInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .locationLine {
+    width: 30px;
+    height: 1px;
+  }
+
+  .footerLogo {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .logoDivider {
+    width: 30px;
+    height: 1px;
+  }
+
+  .footerNav {
+    gap: 1.5rem;
+  }
+
+  .ctaSection {
+    padding: 2rem 1.5rem;
+  }
+}

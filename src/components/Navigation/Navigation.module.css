@@ -1,0 +1,343 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navigation.scrolled {
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.logoIcon {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logoDivider {
+  width: 1px;
+  height: 24px;
+  background: var(--color-medium-gray);
+}
+
+.logoText {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.linkNumber {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-medium-gray);
+  transition: color 0.3s ease;
+}
+
+.linkLabel {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--color-silver);
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover .linkLabel,
+.navLink.active .linkLabel {
+  color: var(--color-white);
+}
+
+.navLink:hover .linkNumber,
+.navLink.active .linkNumber {
+  color: var(--color-light-gray);
+}
+
+.activeIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: var(--color-white);
+}
+
+/* CTA Button */
+.ctaButton {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+/* Mobile Toggle */
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background: var(--color-charcoal);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileMenuContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 3rem;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 4rem;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  padding-left: 1rem;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobileLinkNumber {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-medium-gray);
+  min-width: 30px;
+}
+
+.mobileLinkLabel {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-silver);
+  transition: color 0.3s ease;
+}
+
+.mobileNavLink:hover .mobileLinkLabel,
+.mobileNavLink.active .mobileLinkLabel {
+  color: var(--color-white);
+}
+
+.mobileMenuFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileMenuFooter a {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-light-gray);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobileMenuFooter a:hover {
+  color: var(--color-white);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.mobileMenuPattern {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  opacity: 0.2;
+}
+
+.mobileMenuPattern span {
+  height: 1px;
+  background: var(--color-white);
+}
+
+.mobileMenuPattern span:nth-child(1) { width: 80px; }
+.mobileMenuPattern span:nth-child(2) { width: 60px; }
+.mobileMenuPattern span:nth-child(3) { width: 40px; }
+.mobileMenuPattern span:nth-child(4) { width: 20px; }
+.mobileMenuPattern span:nth-child(5) { width: 10px; }
+
+/* Progress Indicator */
+.progressContainer {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 50;
+}
+
+.progressDot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--color-medium-gray);
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.progressDot:hover,
+.progressDot.activeDot {
+  border-color: var(--color-white);
+  background: var(--color-white);
+}
+
+.progressTooltip {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.4rem 0.75rem;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-white);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.progressDot:hover .progressTooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 25px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .ctaButton {
+    display: none;
+  }
+
+  .mobileToggle {
+    display: block;
+  }
+
+  .progressContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    padding: 1rem;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .logoDivider {
+    display: none;
+  }
+
+  .mobileMenuContent {
+    padding: 6rem 2rem;
+  }
+
+  .mobileLinkLabel {
+    font-size: 1.5rem;
+  }
+}

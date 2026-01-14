@@ -1,0 +1,700 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0a0a 0%, #000000 50%, #0a0a0a 100%);
+}
+
+/* Blueprint Grid Background */
+.blueprintGrid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Construction Elements */
+.constructionElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Crane Animation */
+.crane {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  width: 120px;
+  height: 200px;
+}
+
+.craneTower {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 180px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+}
+
+.craneTower::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 48px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.craneArm {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  transform-origin: left center;
+}
+
+.craneHook {
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 2px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.craneHook::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+/* Building Under Construction */
+.buildingConstruction {
+  position: absolute;
+  bottom: 10%;
+  right: 8%;
+  width: 80px;
+  height: 150px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.buildingFloor {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+  transform-origin: bottom;
+}
+
+.buildingFloor::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  margin: 5px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.scaffolding {
+  position: absolute;
+  top: 0;
+  right: -15px;
+  width: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.1) 10px,
+    rgba(255, 255, 255, 0.1) 12px
+  );
+}
+
+.scaffolding::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Moving Truck */
+.truck {
+  position: absolute;
+  bottom: 8%;
+  width: 80px;
+  height: 30px;
+}
+
+.truckCab {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width: 25px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.truckCab::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.truckBed {
+  position: absolute;
+  left: 25px;
+  bottom: 8px;
+  width: 45px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.truckWheel {
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Building Silhouette */
+.buildingSilhouette {
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60px;
+  height: 200px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.1), transparent);
+  clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
+}
+
+.buildingSilhouette::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 70px;
+  width: 40px;
+  height: 150px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.08), transparent);
+  clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
+}
+
+/* Construction Beam */
+.constructionBeam {
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  width: 80px;
+  height: 8px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  transform: rotate(-15deg);
+}
+
+.constructionBeam::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 10px;
+  width: 60px;
+  height: 6px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  transform: rotate(10deg);
+}
+
+/* Hero Ropeway */
+.heroRopeway {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+}
+
+.heroRopeLine {
+  position: absolute;
+  top: 8px;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+.heroGondola {
+  position: absolute;
+  top: 10px;
+  left: 5%;
+  width: 20px;
+  height: 22px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.heroGondola::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 10px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Hero Dump Truck */
+.heroDumpTruck {
+  position: absolute;
+  bottom: 12%;
+  width: 70px;
+  height: 35px;
+}
+
+.heroDumpCab {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 22px;
+  height: 18px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.heroDumpBed {
+  position: absolute;
+  bottom: 10px;
+  left: 22px;
+  width: 40px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  transform-origin: bottom left;
+  clip-path: polygon(0 100%, 0 30%, 100% 0, 100% 100%);
+}
+
+/* Hero Concrete Mixer */
+.heroMixer {
+  position: absolute;
+  bottom: 18%;
+  width: 65px;
+  height: 35px;
+}
+
+.heroMixerCab {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 20px;
+  height: 18px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.heroMixerDrum {
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  width: 38px;
+  height: 25px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px 12px 12px 4px;
+}
+
+.heroMixerDrum::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 50%;
+}
+
+.gridLineVertical {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform-origin: top;
+}
+
+.gridLineVertical:nth-child(1) { left: 5%; }
+.gridLineVertical:nth-child(2) { left: 10%; }
+.gridLineVertical:nth-child(3) { left: 15%; }
+.gridLineVertical:nth-child(4) { left: 20%; }
+.gridLineVertical:nth-child(5) { left: 25%; }
+.gridLineVertical:nth-child(6) { left: 30%; }
+.gridLineVertical:nth-child(7) { left: 35%; }
+.gridLineVertical:nth-child(8) { left: 40%; }
+.gridLineVertical:nth-child(9) { left: 45%; }
+.gridLineVertical:nth-child(10) { left: 50%; }
+.gridLineVertical:nth-child(11) { left: 55%; }
+.gridLineVertical:nth-child(12) { left: 60%; }
+.gridLineVertical:nth-child(13) { left: 65%; }
+.gridLineVertical:nth-child(14) { left: 70%; }
+.gridLineVertical:nth-child(15) { left: 75%; }
+.gridLineVertical:nth-child(16) { left: 80%; }
+.gridLineVertical:nth-child(17) { left: 85%; }
+.gridLineVertical:nth-child(18) { left: 90%; }
+.gridLineVertical:nth-child(19) { left: 95%; }
+.gridLineVertical:nth-child(20) { left: 100%; }
+
+.gridLineHorizontal {
+  position: absolute;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.03), transparent);
+  transform-origin: left;
+}
+
+.gridLineHorizontal:nth-child(21) { top: 8.33%; }
+.gridLineHorizontal:nth-child(22) { top: 16.66%; }
+.gridLineHorizontal:nth-child(23) { top: 25%; }
+.gridLineHorizontal:nth-child(24) { top: 33.33%; }
+.gridLineHorizontal:nth-child(25) { top: 41.66%; }
+.gridLineHorizontal:nth-child(26) { top: 50%; }
+.gridLineHorizontal:nth-child(27) { top: 58.33%; }
+.gridLineHorizontal:nth-child(28) { top: 66.66%; }
+.gridLineHorizontal:nth-child(29) { top: 75%; }
+.gridLineHorizontal:nth-child(30) { top: 83.33%; }
+.gridLineHorizontal:nth-child(31) { top: 91.66%; }
+.gridLineHorizontal:nth-child(32) { top: 100%; }
+
+/* Floating Architectural Elements */
+.floatingElements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: transform 0.3s ease-out;
+}
+
+.archCircle {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.archSquare {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.archTriangle {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 100px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Main Content */
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Section Marker */
+.sectionMarker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.markerNumber {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  color: var(--color-light-gray);
+}
+
+.markerLine {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-light-gray), transparent);
+}
+
+.markerText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--color-light-gray);
+}
+
+/* Name Container */
+.nameContainer {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.nameWrapper {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.nameTitle {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 600;
+  color: var(--color-white);
+  text-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.1),
+    0 0 80px rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.05em;
+}
+
+.letter {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 600;
+  color: var(--color-white);
+  display: inline-block;
+  text-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.1),
+    0 0 80px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.letter:hover {
+  transform: translateY(-10px) scale(1.05);
+  color: var(--color-off-white);
+  text-shadow: 
+    0 0 60px rgba(255, 255, 255, 0.3),
+    0 0 100px rgba(255, 255, 255, 0.1);
+}
+
+.space {
+  width: 0.5em;
+}
+
+.nameUnderline {
+  position: absolute;
+  bottom: -10px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--color-white), transparent);
+  transform-origin: center;
+}
+
+/* Subtitle */
+.subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle h2 {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.5em;
+  color: var(--color-silver);
+}
+
+.subtitleLine {
+  width: 80px;
+  height: 1px;
+  background: var(--color-medium-gray);
+}
+
+/* Tagline */
+.tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  color: var(--color-light-gray);
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+/* Quick Info */
+.quickInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.infoLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--color-medium-gray);
+}
+
+.infoValue {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-silver);
+}
+
+.infoDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--color-gray);
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-light-gray);
+}
+
+.scrollIndicator span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+}
+
+/* Corner Decorations */
+.cornerTL,
+.cornerTR,
+.cornerBL,
+.cornerBR {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cornerTL {
+  top: 2rem;
+  left: 2rem;
+  border-right: none;
+  border-bottom: none;
+}
+
+.cornerTR {
+  top: 2rem;
+  right: 2rem;
+  border-left: none;
+  border-bottom: none;
+}
+
+.cornerBL {
+  bottom: 2rem;
+  left: 2rem;
+  border-right: none;
+  border-top: none;
+}
+
+.cornerBR {
+  bottom: 2rem;
+  right: 2rem;
+  border-left: none;
+  border-top: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .quickInfo {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .infoDivider {
+    width: 40px;
+    height: 1px;
+  }
+
+  .subtitle {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .subtitleLine {
+    width: 40px;
+  }
+
+  .cornerTL,
+  .cornerTR,
+  .cornerBL,
+  .cornerBR {
+    width: 50px;
+    height: 50px;
+  }
+
+  .archCircle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .archSquare {
+    width: 50px;
+    height: 50px;
+  }
+}
