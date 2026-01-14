@@ -505,6 +505,10 @@
     0 0 40px rgba(255, 255, 255, 0.1),
     0 0 80px rgba(255, 255, 255, 0.05);
   letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .letter {
@@ -537,8 +541,9 @@
   left: 10%;
   right: 10%;
   height: 2px;
-  background: linear-gradient(to right, transparent, var(--color-white), transparent);
+  background: linear-gradient(to right, transparent, #ff6b6b, #ffd93d, #4ecdc4, transparent);
   transform-origin: center;
+  opacity: 0.6;
 }
 
 /* Subtitle */
@@ -623,8 +628,12 @@
   z-index: 25;
 }
 
-.scrollIndicator span {
-  display: none; /* Hide text, just show animation */
+/* Desktop Scroll - Mouse */
+.desktopScroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .scrollLine {
@@ -654,16 +663,56 @@
   position: relative;
 }
 
-.scrollMouse::before {
-  content: '';
+.scrollDot {
   position: absolute;
   top: 6px;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
   height: 6px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   border-radius: 1px;
+}
+
+/* Mobile Scroll - Swipe Gesture */
+.mobileScroll {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.swipeHand {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.swipeText {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+
+/* Easter Egg */
+.easterEgg {
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d);
+  border-radius: 50%;
+  opacity: 0.15;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 30;
+}
+
+.easterEgg:hover {
+  opacity: 1;
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.6);
 }
 
 /* Corner Decorations - subtle, smaller */
@@ -920,6 +969,15 @@
     bottom: 1.25rem;
   }
 
+  /* Show swipe on mobile, hide mouse */
+  .desktopScroll {
+    display: none;
+  }
+
+  .mobileScroll {
+    display: flex;
+  }
+
   .scrollMouse {
     width: 16px;
     height: 26px;
@@ -927,6 +985,13 @@
 
   .scrollLine {
     height: 35px;
+  }
+
+  .easterEgg {
+    bottom: 12%;
+    right: 8%;
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -945,12 +1010,12 @@
   }
 
   .nameTitle {
-    font-size: clamp(2rem, 14vw, 2.8rem);
+    font-size: clamp(2.2rem, 15vw, 3rem);
     letter-spacing: 0;
   }
 
   .letter {
-    font-size: clamp(2rem, 14vw, 2.8rem);
+    font-size: clamp(2.2rem, 15vw, 3rem);
   }
 
   .subtitle {
@@ -958,7 +1023,7 @@
   }
 
   .subtitle h2 {
-    font-size: clamp(0.55rem, 2.8vw, 0.7rem);
+    font-size: clamp(0.6rem, 3vw, 0.8rem);
     letter-spacing: 0.15em;
   }
 
@@ -968,12 +1033,12 @@
   }
 
   .infoLabel {
-    font-size: 0.5rem;
+    font-size: 0.55rem;
     letter-spacing: 0.1em;
   }
 
   .infoValue {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .infoDivider {
@@ -981,7 +1046,7 @@
   }
 
   .tagline {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding: 0 0.25rem;
     margin-bottom: 1rem;
   }
@@ -992,7 +1057,7 @@
 
   .markerNumber,
   .markerText {
-    font-size: 0.45rem;
+    font-size: 0.5rem;
   }
 
   .markerLine {
@@ -1011,40 +1076,45 @@
     bottom: 0.75rem;
   }
 
-  .scrollMouse {
-    width: 14px;
-    height: 22px;
+  .swipeHand {
+    font-size: 1.3rem;
   }
 
-  .scrollLine {
-    height: 25px;
+  .swipeText {
+    font-size: 0.55rem;
+  }
+
+  .easterEgg {
+    width: 12px;
+    height: 12px;
+    opacity: 0.2;
   }
 }
 
 @media (max-width: 360px) {
   .nameTitle {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .letter {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 
   .subtitle h2 {
-    font-size: 0.5rem;
+    font-size: 0.55rem;
     letter-spacing: 0.1em;
   }
 
   .tagline {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .infoLabel {
-    font-size: 0.45rem;
+    font-size: 0.5rem;
   }
 
   .infoValue {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 
   .quickInfo {

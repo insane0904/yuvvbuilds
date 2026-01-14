@@ -175,3 +175,79 @@ html {
     transform: translate(-50%, -100%) translateY(-20px);
   }
 }
+
+/* Konami Code Easter Egg Celebration */
+.konami-celebration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(30, 30, 30, 0.95));
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  z-index: 100000;
+  text-align: center;
+  animation: celebrationAppear 0.5s ease forwards;
+  box-shadow: 
+    0 0 30px rgba(255, 107, 107, 0.3),
+    0 0 60px rgba(255, 217, 61, 0.2),
+    0 0 90px rgba(78, 205, 196, 0.1);
+}
+
+.konami-celebration::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d, #4ecdc4, #9b59b6);
+  z-index: -1;
+  animation: borderGlow 2s linear infinite;
+}
+
+.konami-celebration p {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+@keyframes celebrationAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(30deg);
+  }
+}
+
+/* Rainbow mode for extra flair */
+.rainbow-mode .konami-celebration {
+  animation: celebrationAppear 0.5s ease forwards, rainbowPulse 1s ease infinite;
+}
+
+@keyframes rainbowPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 30px rgba(255, 107, 107, 0.4),
+      0 0 60px rgba(255, 217, 61, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(78, 205, 196, 0.4),
+      0 0 80px rgba(155, 89, 182, 0.3);
+  }
+}
