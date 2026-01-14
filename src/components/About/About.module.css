@@ -515,6 +515,69 @@
   .interestsGrid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .constructionScene {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .bioCard {
+    padding: 1.5rem;
+  }
+
+  .bioHeader {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .bioAvatar {
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+
+  .bioInfo h3 {
+    font-size: 1.25rem;
+  }
+
+  .bioContent p {
+    font-size: 0.9rem;
+  }
+
+  .interestCard {
+    padding: 1.5rem;
+  }
+
+  .interestIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .interestCard h4 {
+    font-size: 0.95rem;
+  }
+
+  .interestCard p {
+    font-size: 0.8rem;
+  }
+
+  .constructionScene {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -529,5 +592,50 @@
 
   .blueprintCorner {
     display: none;
+  }
+
+  .sectionMarker {
+    gap: 0.5rem;
+  }
+
+  .markerLine {
+    width: 30px;
+  }
+
+  .patternLeft,
+  .patternRight {
+    width: 25%;
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .titleLine {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .titleAccent {
+    font-size: clamp(1.8rem, 7vw, 3rem);
+  }
+
+  .bioCard {
+    padding: 1.25rem;
+  }
+
+  .bioHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bioInfo {
+    text-align: center;
+  }
+
+  .statValue {
+    font-size: 1.5rem;
   }
 }

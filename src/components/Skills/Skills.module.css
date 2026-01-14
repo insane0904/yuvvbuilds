@@ -561,6 +561,72 @@
   .techGrid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .constructionScene {
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .header {
+    margin-bottom: 3rem;
+  }
+
+  .mainGrid {
+    gap: 3rem;
+  }
+
+  .sectionTitle {
+    gap: 1rem;
+  }
+
+  .sectionTitle h3 {
+    font-size: 0.65rem;
+  }
+
+  .skillName {
+    font-size: 0.85rem;
+  }
+
+  .techCard {
+    padding: 1.25rem 0.75rem;
+  }
+
+  .techIcon {
+    font-size: 1.5rem;
+  }
+
+  .techName {
+    font-size: 0.6rem;
+  }
+
+  .categoryCard {
+    padding: 0.75rem 1rem;
+  }
+
+  .qualificationsSection {
+    margin-top: 2rem;
+  }
+
+  .timelineContent h4 {
+    font-size: 1rem;
+  }
+
+  .timelineDesc {
+    font-size: 0.85rem;
+  }
+
+  .constructionScene {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -586,5 +652,44 @@
   .decorCircle,
   .decorLines {
     display: none;
+  }
+
+  .sectionMarker {
+    gap: 0.5rem;
+  }
+
+  .markerLine {
+    width: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+  }
+
+  .techGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .techCard {
+    padding: 1rem 0.5rem;
+  }
+
+  .categoryCard h4 {
+    font-size: 0.85rem;
+  }
+
+  .categoryCard p {
+    font-size: 0.7rem;
+  }
+
+  .timelineContent {
+    padding: 1rem;
   }
 }
