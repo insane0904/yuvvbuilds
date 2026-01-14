@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { HiOutlineChevronDown } from 'react-icons/hi';
+import Slider from '../Slider';
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -73,18 +74,18 @@ const Hero = () => {
           className={styles.crane}
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.5, delay: 0.3 }}
+          transition={{ duration: 2, delay: 0.5 }}
         >
           <div className={styles.craneTower} />
           <motion.div 
             className={styles.craneArm}
-            animate={{ rotate: [-5, 5, -5] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ rotate: [-3, 3, -3] }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
           >
             <motion.div 
               className={styles.craneHook}
-              animate={{ y: [0, 20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              animate={{ y: [0, 15, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
         </motion.div>
@@ -127,7 +128,7 @@ const Hero = () => {
           className={styles.truck}
           initial={{ x: '100vw' }}
           animate={{ x: '-100%' }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: 2 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 3 }}
         >
           <div className={styles.truckCab} />
           <div className={styles.truckBed} />
@@ -139,18 +140,18 @@ const Hero = () => {
         <motion.div 
           className={styles.buildingSilhouette}
           initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.3, y: 0 }}
-          transition={{ duration: 1.5, delay: 0.6 }}
+          animate={{ opacity: 0.2, y: 0 }}
+          transition={{ duration: 2, delay: 0.8 }}
         />
 
         {/* Construction Beam */}
         <motion.div 
           className={styles.constructionBeam}
           animate={{ 
-            rotate: [0, 2, -2, 0],
-            y: [0, -5, 0]
+            rotate: [0, 1, -1, 0],
+            y: [0, -3, 0]
           }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
         {/* Ropeway / Cable Car */}
@@ -159,7 +160,7 @@ const Hero = () => {
           <motion.div 
             className={styles.heroGondola}
             animate={{ x: ['0%', '100%', '0%'] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           />
         </div>
 
@@ -168,13 +169,13 @@ const Hero = () => {
           className={styles.heroDumpTruck}
           initial={{ x: '-100%' }}
           animate={{ x: '120vw' }}
-          transition={{ duration: 22, repeat: Infinity, ease: "linear", delay: 5 }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 8 }}
         >
           <div className={styles.heroDumpCab} />
           <motion.div 
             className={styles.heroDumpBed}
-            animate={{ rotate: [0, 0, -40, -40, 0, 0] }}
-            transition={{ duration: 22, repeat: Infinity, times: [0, 0.35, 0.4, 0.5, 0.55, 1] }}
+            animate={{ rotate: [0, 0, -30, -30, 0, 0] }}
+            transition={{ duration: 35, repeat: Infinity, times: [0, 0.35, 0.4, 0.5, 0.55, 1] }}
           />
         </motion.div>
 
@@ -183,13 +184,13 @@ const Hero = () => {
           className={styles.heroMixer}
           initial={{ x: '100vw' }}
           animate={{ x: '-150%' }}
-          transition={{ duration: 28, repeat: Infinity, ease: "linear", delay: 8 }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear", delay: 15 }}
         >
           <div className={styles.heroMixerCab} />
           <motion.div 
             className={styles.heroMixerDrum}
             animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
           />
         </motion.div>
       </div>
@@ -298,6 +299,15 @@ const Hero = () => {
             <span className={styles.infoLabel}>FOCUS</span>
             <span className={styles.infoValue}>Design & Construction</span>
           </div>
+        </motion.div>
+
+        {/* Slider */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+        >
+          <Slider />
         </motion.div>
       </div>
 

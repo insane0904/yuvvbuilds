@@ -1,0 +1,249 @@
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Background Pattern */
+.sliderPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.patternLine {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.patternLine:nth-child(1) {
+  top: 25%;
+}
+
+.patternLine:nth-child(2) {
+  top: 50%;
+}
+
+.patternLine:nth-child(3) {
+  top: 75%;
+}
+
+/* Slide Container */
+.slideContainer {
+  position: relative;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.slideIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  filter: grayscale(0.5);
+  opacity: 0.9;
+}
+
+.slideTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.slideSubtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 300;
+  color: var(--color-silver);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Navigation Buttons */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: var(--color-silver);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+}
+
+.navButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.prevButton {
+  left: 0.5rem;
+}
+
+.nextButton {
+  right: 0.5rem;
+}
+
+/* Dot Indicators */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.activeDot {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.2);
+}
+
+/* Progress Bar */
+.progressContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+  transform-origin: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .slider {
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+    max-width: 90%;
+  }
+
+  .slideContainer {
+    min-height: 120px;
+    padding: 0.5rem 2.5rem;
+  }
+
+  .slideIcon {
+    font-size: 2rem;
+  }
+
+  .navButton {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .prevButton {
+    left: 0.25rem;
+  }
+
+  .nextButton {
+    right: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    margin: 1.5rem auto;
+    padding: 1rem 0.75rem;
+  }
+
+  .slideContainer {
+    min-height: 100px;
+    padding: 0.5rem 2rem;
+  }
+
+  .slideIcon {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .slideTitle {
+    font-size: 1.25rem;
+  }
+
+  .slideSubtitle {
+    font-size: 0.75rem;
+  }
+
+  .dots {
+    margin-top: 1rem;
+    gap: 0.4rem;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .navButton {
+    width: 26px;
+    height: 26px;
+  }
+
+  .navButton svg {
+    width: 14px;
+    height: 14px;
+  }
+}
