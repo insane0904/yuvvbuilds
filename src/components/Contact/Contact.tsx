@@ -102,6 +102,40 @@ const Contact = () => {
           />
         </div>
 
+        {/* Famous Building - Eiffel Tower Style */}
+        <motion.div 
+          className={styles.eiffelTower}
+          initial={{ opacity: 0, scaleY: 0 }}
+          animate={isInView ? { opacity: 0.2, scaleY: 1 } : {}}
+          transition={{ duration: 1.5, delay: 0.5 }}
+        />
+
+        {/* Substation */}
+        <motion.div 
+          className={styles.contactSubstation}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.3 } : {}}
+          transition={{ duration: 1, delay: 0.6 }}
+        >
+          <div className={styles.substationUnit} />
+          <div className={styles.substationPoles} />
+        </motion.div>
+
+        {/* Cement Mixer */}
+        <motion.div 
+          className={styles.cementMixer}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.35 } : {}}
+          transition={{ duration: 1, delay: 0.7 }}
+        >
+          <div className={styles.mixerBase} />
+          <motion.div 
+            className={styles.mixerBarrel}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          />
+        </motion.div>
+
         {/* Construction Crane */}
         <motion.div 
           className={styles.finalCrane}
@@ -123,30 +157,24 @@ const Contact = () => {
           </motion.div>
         </motion.div>
 
-        {/* Moving Truck with Materials */}
+        {/* Bullet Train */}
         <motion.div 
-          className={styles.materialTruck}
+          className={styles.contactTrain}
           initial={{ x: '-100%' }}
           animate={{ x: '120vw' }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 2 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear", delay: 5 }}
         >
-          <div className={styles.materialTruckCab} />
-          <div className={styles.materialTruckBed}>
-            <div className={styles.materials} />
-          </div>
-          <div className={styles.materialTruckWheels}>
-            <motion.div 
-              className={styles.materialWheel}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div 
-              className={styles.materialWheel}
-              animate={{ rotate: 360 }}
-              transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-            />
-          </div>
+          <div className={styles.trainHead} />
+          <div className={styles.trainBody} />
+          <div className={styles.trainBody} />
         </motion.div>
+
+        {/* Flying Plane */}
+        <motion.div 
+          className={styles.contactPlane}
+          animate={{ x: ['-5%', '105%'] }}
+          transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
+        />
 
         {/* Ropeway System */}
         <div className={styles.contactRopeway}>

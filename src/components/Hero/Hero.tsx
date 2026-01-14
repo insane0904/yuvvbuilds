@@ -122,26 +122,69 @@ const Hero = () => {
           />
         </motion.div>
 
-        {/* Moving Truck */}
+        {/* Flying Plane */}
         <motion.div 
-          className={styles.truck}
-          initial={{ x: '100vw' }}
-          animate={{ x: '-100%' }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear", delay: 3 }}
+          className={styles.plane}
+          initial={{ x: '-10%', y: '0%' }}
+          animate={{ x: '110%', y: '-5%' }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear", delay: 2 }}
         >
-          <div className={styles.truckCab} />
-          <div className={styles.truckBed} />
-          <div className={styles.truckWheel} />
-          <div className={styles.truckWheel} style={{ left: '60px' }} />
+          <div className={styles.planeBody} />
+          <div className={styles.planeWing} />
+          <div className={styles.planeTail} />
         </motion.div>
 
-        {/* Second Building Silhouette */}
+        {/* Second Plane (smaller, different path) */}
         <motion.div 
-          className={styles.buildingSilhouette}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 0.2, y: 0 }}
-          transition={{ duration: 2, delay: 0.8 }}
+          className={styles.planeSmall}
+          initial={{ x: '110%', y: '0%' }}
+          animate={{ x: '-10%', y: '8%' }}
+          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 10 }}
         />
+
+        {/* Famous Building - Empire State Style */}
+        <motion.div 
+          className={styles.famousBuilding}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 0.15, y: 0 }}
+          transition={{ duration: 2, delay: 1 }}
+        />
+
+        {/* Famous Building - Burj Khalifa Style */}
+        <motion.div 
+          className={styles.burjKhalifa}
+          initial={{ opacity: 0, scaleY: 0 }}
+          animate={{ opacity: 0.12, scaleY: 1 }}
+          transition={{ duration: 2.5, delay: 1.5 }}
+        />
+
+        {/* Unfinished Building with exposed structure */}
+        <motion.div 
+          className={styles.unfinishedBuilding}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.2 }}
+          transition={{ duration: 1.5, delay: 1 }}
+        >
+          <div className={styles.exposedBeams} />
+          <div className={styles.exposedFloors} />
+        </motion.div>
+
+        {/* City Substation */}
+        <motion.div 
+          className={styles.substation}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.25 }}
+          transition={{ duration: 1, delay: 1.2 }}
+        >
+          <div className={styles.substationBox} />
+          <div className={styles.powerLines}>
+            <motion.div 
+              className={styles.electricSpark}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
+            />
+          </div>
+        </motion.div>
 
         {/* Construction Beam */}
         <motion.div 
@@ -162,36 +205,6 @@ const Hero = () => {
             transition={{ duration: 13, repeat: Infinity, ease: "linear" }}
           />
         </div>
-
-        {/* Dump Truck Emptying */}
-        <motion.div 
-          className={styles.heroDumpTruck}
-          initial={{ x: '-100%' }}
-          animate={{ x: '120vw' }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear", delay: 8 }}
-        >
-          <div className={styles.heroDumpCab} />
-          <motion.div 
-            className={styles.heroDumpBed}
-            animate={{ rotate: [0, 0, -30, -30, 0, 0] }}
-            transition={{ duration: 35, repeat: Infinity, times: [0, 0.35, 0.4, 0.5, 0.55, 1] }}
-          />
-        </motion.div>
-
-        {/* Concrete Mixer */}
-        <motion.div 
-          className={styles.heroMixer}
-          initial={{ x: '100vw' }}
-          animate={{ x: '-150%' }}
-          transition={{ duration: 45, repeat: Infinity, ease: "linear", delay: 15 }}
-        >
-          <div className={styles.heroMixerCab} />
-          <motion.div 
-            className={styles.heroMixerDrum}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-          />
-        </motion.div>
       </div>
 
       {/* Floating Architectural Elements */}

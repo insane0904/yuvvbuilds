@@ -57,6 +57,36 @@ const About = () => {
           <div className={styles.ropewayTower} style={{ left: '90%' }} />
         </div>
 
+        {/* City Plan / Blueprint */}
+        <motion.div 
+          className={styles.cityPlan}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.3 } : {}}
+          transition={{ duration: 1.5, delay: 0.3 }}
+        >
+          <div className={styles.planGrid} />
+          <div className={styles.planBlocks} />
+        </motion.div>
+
+        {/* Concrete Blocks */}
+        <motion.div 
+          className={styles.concreteBlocks}
+          initial={{ opacity: 0, x: -30 }}
+          animate={isInView ? { opacity: 0.4, x: 0 } : {}}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
+          <div className={styles.concreteBlock} />
+          <div className={styles.concreteBlock} />
+          <div className={styles.concreteBlock} />
+        </motion.div>
+
+        {/* Flying Plane */}
+        <motion.div 
+          className={styles.aboutPlane}
+          animate={{ x: ['-10%', '110%'] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+
         {/* Building Being Constructed */}
         <motion.div 
           className={styles.constructingBuilding}
@@ -82,6 +112,14 @@ const About = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* Warehouse */}
+        <motion.div 
+          className={styles.aboutWarehouse}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.25 } : {}}
+          transition={{ duration: 1, delay: 0.8 }}
+        />
 
         {/* Small Crane */}
         <motion.div 

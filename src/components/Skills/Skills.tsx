@@ -72,39 +72,77 @@ const Skills = () => {
     <section className={styles.skills} id="skills" ref={ref}>
       {/* Construction Animations */}
       <div className={styles.constructionScene}>
-        {/* Dump Truck Animation - Moving right to left */}
+        {/* Bullet Train Animation - Moving right to left */}
         <motion.div 
-          className={styles.dumpTruck}
+          className={styles.bulletTrain}
           initial={{ x: '120vw' }}
           animate={{ x: '-100%' }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
         >
-          <div className={styles.truckBody} />
-          <motion.div 
-            className={styles.truckBed}
-            animate={{ rotate: [0, 0, -35, -35, 0, 0] }}
-            transition={{ duration: 25, repeat: Infinity, times: [0, 0.4, 0.45, 0.55, 0.6, 1] }}
-          />
-          <div className={styles.truckWheels}>
-            <motion.div 
-              className={styles.wheel}
-              animate={{ rotate: -360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div 
-              className={styles.wheel}
-              animate={{ rotate: -360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-            />
+          <div className={styles.trainEngine}>
+            <div className={styles.trainNose} />
           </div>
+          <div className={styles.trainCar} />
+          <div className={styles.trainCar} />
+          <div className={styles.trainCar} />
         </motion.div>
 
-        {/* Dirt Pile */}
+        {/* Train Track */}
+        <div className={styles.trainTrack} />
+
+        {/* Steel Pipes */}
         <motion.div 
-          className={styles.dirtPile}
-          initial={{ scale: 0 }}
-          animate={isInView ? { scale: 1 } : {}}
-          transition={{ duration: 1, delay: 0.5 }}
+          className={styles.steelPipes}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.4 } : {}}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
+          <div className={styles.pipe} />
+          <div className={styles.pipe} />
+          <div className={styles.pipe} />
+        </motion.div>
+
+        {/* Cement Bags */}
+        <motion.div 
+          className={styles.cementBags}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 0.5, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <div className={styles.cementBag} />
+          <div className={styles.cementBag} />
+          <div className={styles.cementBag} />
+        </motion.div>
+
+        {/* Factory with Smoke */}
+        <motion.div 
+          className={styles.factory}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.35 } : {}}
+          transition={{ duration: 1 }}
+        >
+          <div className={styles.factoryBody} />
+          <div className={styles.factoryChimney}>
+            <motion.div 
+              className={styles.smoke}
+              animate={{ y: [-5, -20], opacity: [0.5, 0], scale: [1, 1.5] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+            />
+            <motion.div 
+              className={styles.smoke}
+              animate={{ y: [-5, -25], opacity: [0.4, 0], scale: [1, 1.8] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut", delay: 0.5 }}
+            />
+          </div>
+          <div className={styles.factoryChimney} style={{ right: '15px', height: '40px' }} />
+        </motion.div>
+
+        {/* Silo */}
+        <motion.div 
+          className={styles.silo}
+          initial={{ opacity: 0, scaleY: 0 }}
+          animate={isInView ? { opacity: 0.4, scaleY: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.6 }}
         />
 
         {/* Tower Crane */}
@@ -129,6 +167,14 @@ const Skills = () => {
             <div className={styles.craneCounterweight} />
           </motion.div>
         </motion.div>
+
+        {/* Warehouse */}
+        <motion.div 
+          className={styles.warehouse}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.3 } : {}}
+          transition={{ duration: 1, delay: 0.5 }}
+        />
 
         {/* Scaffolding Structure */}
         <div className={styles.scaffolding}>

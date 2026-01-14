@@ -114,6 +114,44 @@ const Hobbies = () => {
           </div>
         </motion.div>
 
+        {/* Steel Pipes Stack */}
+        <motion.div 
+          className={styles.steelPipesStack}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.35 } : {}}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          <div className={styles.steelPipe} />
+          <div className={styles.steelPipe} />
+          <div className={styles.steelPipe} />
+          <div className={styles.steelPipe} />
+        </motion.div>
+
+        {/* Factory */}
+        <motion.div 
+          className={styles.hobbyFactory}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 0.3, y: 0 } : {}}
+          transition={{ duration: 1.2, delay: 0.5 }}
+        >
+          <div className={styles.hobbyFactoryBody} />
+          <div className={styles.hobbyFactoryChimney}>
+            <motion.div 
+              className={styles.hobbySmoke}
+              animate={{ y: [-3, -15], opacity: [0.5, 0], scale: [1, 1.3] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeOut" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* Silo */}
+        <motion.div 
+          className={styles.hobbySilo}
+          initial={{ opacity: 0, scaleY: 0 }}
+          animate={isInView ? { opacity: 0.3, scaleY: 1 } : {}}
+          transition={{ duration: 1, delay: 0.6 }}
+        />
+
         {/* Excavator */}
         <motion.div 
           className={styles.excavator}
@@ -136,6 +174,13 @@ const Hobbies = () => {
           </motion.div>
           <div className={styles.excavatorTracks} />
         </motion.div>
+
+        {/* Flying Plane */}
+        <motion.div 
+          className={styles.hobbyPlane}
+          animate={{ x: ['110%', '-10%'] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        />
 
         {/* Cable Car / Gondola */}
         <div className={styles.cableCar}>

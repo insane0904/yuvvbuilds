@@ -195,6 +195,187 @@
   background: rgba(255,255,255,0.05);
 }
 
+/* Eiffel Tower Style */
+.eiffelTower {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  width: 30px;
+  height: 140px;
+  transform-origin: bottom;
+}
+
+.eiffelTower::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.12));
+  clip-path: polygon(40% 0%, 45% 30%, 30% 30%, 20% 100%, 80% 100%, 70% 30%, 55% 30%, 60% 0%);
+}
+
+.eiffelTower::after {
+  content: '';
+  position: absolute;
+  bottom: 40%;
+  left: 20%;
+  width: 60%;
+  height: 2px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Contact Substation */
+.contactSubstation {
+  position: absolute;
+  bottom: 10%;
+  right: 25%;
+  width: 60px;
+  height: 45px;
+}
+
+.substationUnit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 30px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.substationUnit::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  background: rgba(255,100,100,0.2);
+  border-radius: 50%;
+}
+
+.substationPoles {
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+  width: 40px;
+  height: 25px;
+}
+
+.substationPoles::before,
+.substationPoles::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: rgba(255,255,255,0.12);
+}
+
+.substationPoles::before { left: 5px; }
+.substationPoles::after { right: 5px; }
+
+/* Cement Mixer */
+.cementMixer {
+  position: absolute;
+  bottom: 8%;
+  left: 20%;
+  width: 50px;
+  height: 35px;
+}
+
+.mixerBase {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.mixerBarrel {
+  position: absolute;
+  bottom: 8px;
+  left: 15px;
+  width: 30px;
+  height: 22px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px 10px 10px 4px;
+}
+
+.mixerBarrel::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px;
+  height: 4px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+}
+
+/* Contact Train */
+.contactTrain {
+  position: absolute;
+  bottom: 4%;
+  display: flex;
+  height: 20px;
+}
+
+.trainHead {
+  width: 35px;
+  height: 18px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.08));
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0 10px 3px 0;
+}
+
+.trainHead::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 3px;
+  width: 10px;
+  height: 12px;
+  background: rgba(255,255,255,0.1);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+
+.trainBody {
+  width: 28px;
+  height: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  margin-left: -1px;
+  margin-top: 1px;
+}
+
+/* Contact Plane */
+.contactPlane {
+  position: absolute;
+  top: 15%;
+  width: 28px;
+  height: 10px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px 2px 2px 6px;
+  opacity: 0.2;
+}
+
+.contactPlane::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 8px;
+  width: 12px;
+  height: 10px;
+  background: rgba(255,255,255,0.06);
+  clip-path: polygon(30% 0%, 100% 50%, 30% 100%, 0% 50%);
+}
+
 /* Contact Ropeway */
 .contactRopeway {
   position: absolute;
