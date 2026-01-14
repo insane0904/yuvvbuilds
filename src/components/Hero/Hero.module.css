@@ -7,6 +7,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, #0a0a0a 0%, #000000 50%, #0a0a0a 100%);
+  padding-top: 80px; /* Space for fixed navigation */
 }
 
 /* Blueprint Grid Background */
@@ -17,9 +18,10 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
 }
 
-/* Construction Elements */
+/* Construction Elements - positioned at edges only */
 .constructionElements {
   position: absolute;
   top: 0;
@@ -28,16 +30,17 @@
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  z-index: 2;
 }
 
-/* Crane Animation */
+/* Crane Animation - bottom left corner */
 .crane {
   position: absolute;
-  bottom: 15%;
-  left: 5%;
-  width: 120px;
-  height: 200px;
-  opacity: 0.4;
+  bottom: 0;
+  left: 2%;
+  width: 100px;
+  height: 160px;
+  opacity: 0.15;
 }
 
 .craneTower {
@@ -45,19 +48,19 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 8px;
-  height: 180px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  width: 6px;
+  height: 140px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05));
 }
 
 .craneTower::before {
   content: '';
   position: absolute;
   bottom: 0;
-  left: -20px;
-  width: 48px;
-  height: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  left: -15px;
+  width: 36px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.02);
 }
 
@@ -65,75 +68,76 @@
   position: absolute;
   top: 0;
   left: 50%;
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.05));
   transform-origin: left center;
 }
 
 .craneHook {
   position: absolute;
   right: 0;
-  top: 4px;
-  width: 2px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.15);
+  top: 3px;
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .craneHook::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: -4px;
-  width: 10px;
-  height: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  left: -3px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 50%;
 }
 
-/* Building Under Construction */
+/* Building Under Construction - bottom right corner */
 .buildingConstruction {
   position: absolute;
-  bottom: 10%;
-  right: 8%;
-  width: 80px;
-  height: 150px;
+  bottom: 0;
+  right: 3%;
+  width: 70px;
+  height: 120px;
   display: flex;
   flex-direction: column-reverse;
-  gap: 4px;
-  opacity: 0.35;
+  gap: 3px;
+  opacity: 0.12;
 }
 
 .buildingFloor {
   width: 100%;
-  height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.01);
+  height: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.02);
   transform-origin: bottom;
 }
 
 .buildingFloor::before {
   content: '';
   position: absolute;
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  margin: 5px;
-  border: 1px dashed rgba(255, 255, 255, 0.05);
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  margin: 4px;
+  border: 1px dashed rgba(255, 255, 255, 0.08);
 }
 
 .scaffolding {
   position: absolute;
   top: 0;
-  right: -15px;
-  width: 10px;
+  right: -12px;
+  width: 8px;
   height: 100%;
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 10px,
-    rgba(255, 255, 255, 0.1) 10px,
-    rgba(255, 255, 255, 0.1) 12px
+    transparent 8px,
+    rgba(255, 255, 255, 0.08) 8px,
+    rgba(255, 255, 255, 0.08) 10px
   );
+  opacity: 0.5;
 }
 
 .scaffolding::before {
@@ -143,152 +147,150 @@
   left: 50%;
   width: 1px;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-/* Moving Truck */
+/* Moving Truck - runs along bottom edge */
 .truck {
   position: absolute;
-  bottom: 8%;
-  width: 80px;
-  height: 30px;
-  opacity: 0.25;
+  bottom: 0;
+  width: 60px;
+  height: 25px;
+  opacity: 0.1;
 }
 
 .truckCab {
   position: absolute;
   left: 0;
-  bottom: 8px;
-  width: 25px;
-  height: 22px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  bottom: 6px;
+  width: 20px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .truckCab::before {
   content: '';
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 12px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .truckBed {
   position: absolute;
-  left: 25px;
-  bottom: 8px;
-  width: 45px;
-  height: 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  left: 20px;
+  bottom: 6px;
+  width: 35px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .truckWheel {
   position: absolute;
   bottom: 0;
-  left: 8px;
-  width: 12px;
-  height: 12px;
+  left: 6px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
 }
 
-/* Building Silhouette */
+/* Building Silhouette - very subtle at bottom */
 .buildingSilhouette {
   position: absolute;
   bottom: 0;
-  left: 20%;
-  width: 60px;
-  height: 200px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.06), transparent);
-  clip-path: polygon(0% 100%, 20% 0%, 80% 0%, 100% 100%);
-  opacity: 0.3;
+  left: 15%;
+  width: 50px;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.08), transparent);
+  clip-path: polygon(0% 100%, 15% 0%, 85% 0%, 100% 100%);
+  opacity: 0.15;
 }
 
 .buildingSilhouette::before {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 70px;
-  width: 40px;
-  height: 150px;
+  left: 60px;
+  width: 35px;
+  height: 70px;
   background: linear-gradient(to top, rgba(255, 255, 255, 0.04), transparent);
   clip-path: polygon(0% 100%, 10% 0%, 90% 0%, 100% 100%);
 }
 
-/* Construction Beam */
+/* Construction Beam - top right corner */
 .constructionBeam {
   position: absolute;
-  top: 25%;
-  right: 20%;
-  width: 80px;
-  height: 8px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-  transform: rotate(-15deg);
-  opacity: 0.4;
+  top: 10%;
+  right: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(-20deg);
+  transform-origin: right center;
+  opacity: 0.2;
 }
 
 .constructionBeam::before {
   content: '';
   position: absolute;
-  top: -30px;
-  left: 10px;
-  width: 60px;
-  height: 6px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  top: 20px;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.08), transparent);
   transform: rotate(10deg);
 }
 
-/* Hero Ropeway */
+/* Hero Ropeway - top area, very subtle */
 .heroRopeway {
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 0;
   width: 100%;
-  height: 50px;
-  opacity: 0.3;
+  height: 40px;
+  opacity: 0.15;
+  display: none; /* Hidden by default, too distracting */
 }
 
 .heroRopeLine {
   position: absolute;
   top: 8px;
-  left: 5%;
-  width: 90%;
+  left: 0;
+  width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  background: linear-gradient(90deg, transparent 5%, rgba(255,255,255,0.08) 50%, transparent 95%);
 }
 
 .heroGondola {
   position: absolute;
   top: 10px;
   left: 5%;
-  width: 20px;
-  height: 22px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  width: 16px;
+  height: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .heroGondola::before {
   content: '';
   position: absolute;
-  top: -10px;
+  top: -8px;
   left: 50%;
   transform: translateX(-50%);
   width: 1px;
-  height: 10px;
-  background: rgba(255,255,255,0.1);
+  height: 8px;
+  background: rgba(255,255,255,0.12);
 }
 
-/* Hero Dump Truck */
+/* Hero Dump Truck - hidden, too distracting */
 .heroDumpTruck {
-  position: absolute;
-  bottom: 12%;
-  width: 70px;
-  height: 35px;
-  opacity: 0.25;
+  display: none;
 }
 
 .heroDumpCab {
@@ -313,13 +315,9 @@
   clip-path: polygon(0 100%, 0 30%, 100% 0, 100% 100%);
 }
 
-/* Hero Concrete Mixer */
+/* Hero Concrete Mixer - hidden, too distracting */
 .heroMixer {
-  position: absolute;
-  bottom: 18%;
-  width: 65px;
-  height: 35px;
-  opacity: 0.25;
+  display: none;
 }
 
 .heroMixerCab {
@@ -407,51 +405,54 @@
 .gridLineHorizontal:nth-child(31) { top: 91.66%; }
 .gridLineHorizontal:nth-child(32) { top: 100%; }
 
-/* Floating Architectural Elements */
+/* Floating Architectural Elements - corners only */
 .floatingElements {
   position: absolute;
   width: 100%;
   height: 100%;
   pointer-events: none;
   transition: transform 0.3s ease-out;
+  z-index: 3;
 }
 
 .archCircle {
   position: absolute;
-  top: 15%;
-  right: 10%;
-  width: 200px;
-  height: 200px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  top: 12%;
+  right: 8%;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 50%;
 }
 
 .archSquare {
   position: absolute;
-  bottom: 20%;
-  left: 8%;
-  width: 100px;
-  height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  bottom: 15%;
+  left: 5%;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .archTriangle {
   position: absolute;
-  top: 60%;
-  right: 15%;
+  bottom: 25%;
+  right: 8%;
   width: 0;
   height: 0;
-  border-left: 60px solid transparent;
-  border-right: 60px solid transparent;
-  border-bottom: 100px solid rgba(255, 255, 255, 0.05);
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 70px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Main Content */
+/* Main Content - highest z-index, centered */
 .content {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   text-align: center;
   padding: 2rem;
+  max-width: 900px;
+  width: 100%;
 }
 
 /* Section Marker */
@@ -609,108 +610,181 @@
   background: var(--color-gray);
 }
 
-/* Scroll Indicator */
+/* Scroll Indicator - Modern minimal design */
 .scrollIndicator {
   position: absolute;
-  bottom: 3rem;
+  bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--color-light-gray);
+  gap: 0.75rem;
+  z-index: 25;
 }
 
 .scrollIndicator span {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
+  display: none; /* Hide text, just show animation */
 }
 
-/* Corner Decorations */
+.scrollLine {
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+  position: relative;
+}
+
+.scrollLine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+}
+
+.scrollMouse {
+  width: 20px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  position: relative;
+}
+
+.scrollMouse::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1px;
+}
+
+/* Corner Decorations - subtle, smaller */
 .cornerTL,
 .cornerTR,
 .cornerBL,
 .cornerBR {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 5;
 }
 
 .cornerTL {
-  top: 2rem;
-  left: 2rem;
+  top: 1.5rem;
+  left: 1.5rem;
   border-right: none;
   border-bottom: none;
 }
 
 .cornerTR {
-  top: 2rem;
-  right: 2rem;
+  top: 1.5rem;
+  right: 1.5rem;
   border-left: none;
   border-bottom: none;
 }
 
 .cornerBL {
-  bottom: 2rem;
-  left: 2rem;
+  bottom: 1.5rem;
+  left: 1.5rem;
   border-right: none;
   border-top: none;
 }
 
 .cornerBR {
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   border-left: none;
   border-top: none;
 }
 
 /* Responsive */
+@media (max-width: 1400px) {
+  .archCircle {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .archTriangle {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 50px solid rgba(255, 255, 255, 0.02);
+  }
+}
+
 @media (max-width: 1024px) {
+  .hero {
+    padding-top: 70px;
+  }
+
   .crane {
-    width: 80px;
-    height: 140px;
-    bottom: 10%;
-    left: 3%;
-    opacity: 0.6;
+    width: 70px;
+    height: 110px;
+    opacity: 0.1;
   }
 
   .craneTower {
-    height: 120px;
+    height: 90px;
   }
 
   .craneArm {
-    width: 70px;
+    width: 60px;
   }
 
   .buildingConstruction {
-    width: 60px;
-    height: 100px;
-    right: 5%;
-    opacity: 0.5;
+    width: 50px;
+    height: 80px;
+    opacity: 0.08;
   }
 
   .buildingFloor {
-    height: 28px;
+    height: 25px;
   }
 
-  .heroRopeway,
-  .heroDumpTruck,
-  .heroMixer {
-    opacity: 0.5;
+  .archCircle {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    right: 5%;
+  }
+
+  .archSquare {
+    width: 60px;
+    height: 60px;
+    bottom: 12%;
+    left: 4%;
+  }
+
+  .archTriangle {
+    display: none;
+  }
+
+  .cornerTL,
+  .cornerTR,
+  .cornerBL,
+  .cornerBR {
+    width: 40px;
+    height: 40px;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
     padding: 1rem;
-    min-height: 100svh; /* Use small viewport height for mobile */
+    padding-top: 80px;
+    min-height: 100svh;
   }
 
   .content {
-    padding: 1rem 0.5rem;
+    padding: 1.5rem 1rem;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -724,58 +798,54 @@
   }
 
   .nameTitle {
-    font-size: clamp(2rem, 14vw, 3.5rem);
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
     letter-spacing: 0.02em;
-    word-break: break-word;
     line-height: 1.1;
   }
 
   .letter {
-    font-size: clamp(2rem, 14vw, 3.5rem);
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
   }
 
   .nameUnderline {
     bottom: -5px;
-    left: 15%;
-    right: 15%;
+    left: 20%;
+    right: 20%;
   }
 
   .quickInfo {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
     width: 100%;
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   .infoItem {
     width: 100%;
     text-align: center;
-    padding: 0.5rem 0;
+    padding: 0.4rem 0;
   }
 
   .infoDivider {
-    width: 60px;
+    width: 50px;
     height: 1px;
     margin: 0 auto;
   }
 
   .subtitle {
     flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
     width: 100%;
   }
 
   .subtitle h2 {
-    font-size: clamp(0.6rem, 2.5vw, 0.9rem);
-    letter-spacing: 0.3em;
+    font-size: clamp(0.65rem, 2.5vw, 0.85rem);
+    letter-spacing: 0.25em;
     text-align: center;
-    word-break: keep-all;
-    white-space: nowrap;
   }
 
   .subtitleLine {
-    width: 30px;
     display: none;
   }
 
@@ -783,52 +853,31 @@
   .cornerTR,
   .cornerBL,
   .cornerBR {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
   }
 
   .cornerTL,
   .cornerBL {
-    left: 0.75rem;
+    left: 0.5rem;
   }
 
   .cornerTR,
   .cornerBR {
-    right: 0.75rem;
+    right: 0.5rem;
   }
 
   .cornerTL,
   .cornerTR {
-    top: 0.75rem;
+    top: 0.5rem;
   }
 
   .cornerBL,
   .cornerBR {
-    bottom: 0.75rem;
+    bottom: 0.5rem;
   }
 
-  .archCircle {
-    width: 60px;
-    height: 60px;
-    top: 8%;
-    right: 3%;
-    opacity: 0.4;
-  }
-
-  .archSquare {
-    width: 30px;
-    height: 30px;
-    opacity: 0.4;
-  }
-
-  .archTriangle {
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 50px solid rgba(255, 255, 255, 0.03);
-    opacity: 0.5;
-  }
-
-  /* Hide construction elements on tablet/mobile for cleaner look */
+  /* Hide all construction and floating elements on mobile */
   .crane,
   .buildingConstruction,
   .truck,
@@ -836,148 +885,154 @@
   .constructionBeam,
   .heroRopeway,
   .heroDumpTruck,
-  .heroMixer {
-    display: none;
+  .heroMixer,
+  .floatingElements,
+  .archCircle,
+  .archSquare,
+  .archTriangle {
+    display: none !important;
   }
 
   .sectionMarker {
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .markerLine {
-    width: 25px;
+    width: 20px;
   }
 
   .markerNumber,
   .markerText {
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
   }
 
   .tagline {
-    font-size: clamp(0.85rem, 3vw, 1rem);
-    padding: 0 1rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
-    max-width: 90%;
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    max-width: 95%;
   }
 
   .scrollIndicator {
-    bottom: 1.5rem;
+    bottom: 1.25rem;
   }
 
-  .scrollIndicator span {
-    font-size: 0.5rem;
+  .scrollMouse {
+    width: 16px;
+    height: 26px;
   }
 
-  .floatingElements {
-    opacity: 0.3;
+  .scrollLine {
+    height: 35px;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
     padding: 0.5rem;
+    padding-top: 70px;
   }
 
   .content {
-    padding: 0.5rem;
+    padding: 1rem 0.5rem;
   }
 
   .nameContainer {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .nameTitle {
-    font-size: clamp(1.8rem, 15vw, 2.5rem);
+    font-size: clamp(2rem, 14vw, 2.8rem);
     letter-spacing: 0;
   }
 
   .letter {
-    font-size: clamp(1.8rem, 15vw, 2.5rem);
+    font-size: clamp(2rem, 14vw, 2.8rem);
   }
 
   .subtitle {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   .subtitle h2 {
-    font-size: clamp(0.5rem, 2.5vw, 0.7rem);
-    letter-spacing: 0.2em;
+    font-size: clamp(0.55rem, 2.8vw, 0.7rem);
+    letter-spacing: 0.15em;
   }
 
   .infoItem {
     text-align: center;
-    padding: 0.4rem 0;
+    padding: 0.3rem 0;
   }
 
   .infoLabel {
     font-size: 0.5rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
   }
 
   .infoValue {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .infoDivider {
-    width: 40px;
+    width: 30px;
   }
 
   .tagline {
     font-size: 0.8rem;
-    padding: 0 0.5rem;
-    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
+    margin-bottom: 1rem;
   }
 
   .sectionMarker {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
 
   .markerNumber,
   .markerText {
-    font-size: 0.5rem;
+    font-size: 0.45rem;
   }
 
   .markerLine {
-    width: 20px;
+    width: 15px;
   }
 
   .cornerTL,
   .cornerTR,
   .cornerBL,
   .cornerBR {
-    width: 20px;
-    height: 20px;
-  }
-
-  .floatingElements {
-    display: none;
+    width: 18px;
+    height: 18px;
   }
 
   .scrollIndicator {
-    bottom: 1rem;
+    bottom: 0.75rem;
   }
 
-  .scrollIndicator span {
-    font-size: 0.45rem;
-    letter-spacing: 0.2em;
+  .scrollMouse {
+    width: 14px;
+    height: 22px;
+  }
+
+  .scrollLine {
+    height: 25px;
   }
 }
 
 @media (max-width: 360px) {
   .nameTitle {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
 
   .letter {
-    font-size: 1.6rem;
+    font-size: 1.75rem;
   }
 
   .subtitle h2 {
     font-size: 0.5rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
   }
 
   .tagline {
@@ -989,6 +1044,10 @@
   }
 
   .infoValue {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+  }
+
+  .quickInfo {
+    gap: 0.5rem;
   }
 }

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { HiOutlineChevronDown } from 'react-icons/hi';
 import Slider from '../Slider';
 import styles from './Hero.module.css';
 
@@ -311,20 +310,34 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator - Modern Mouse Design */}
       <motion.div 
         className={styles.scrollIndicator}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 2 }}
       >
-        <span>SCROLL TO EXPLORE</span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <HiOutlineChevronDown size={24} />
-        </motion.div>
+        <div className={styles.scrollMouse}>
+          <motion.div 
+            style={{
+              position: 'absolute',
+              top: '6px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '2px',
+              height: '6px',
+              background: 'rgba(255, 255, 255, 0.6)',
+              borderRadius: '1px',
+            }}
+            animate={{ y: [0, 8, 0], opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+        <motion.div 
+          className={styles.scrollLine}
+          animate={{ scaleY: [1, 0.5, 1], opacity: [0.4, 0.2, 0.4] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        />
       </motion.div>
 
       {/* Corner Decorations */}
