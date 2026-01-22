@@ -611,31 +611,46 @@ const Hero = () => {
         >
           <Slider />
         </motion.div>
-
-        {/* Mobile Scroll Indicator */}
-        <motion.div 
-          className={styles.mobileScrollHint}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 2.5 }}
-        >
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <svg width="20" height="28" viewBox="0 0 20 28" fill="none">
-              <rect x="1" y="1" width="18" height="26" rx="9" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
-              <motion.circle 
-                cx="10" cy="8" r="2" 
-                fill="rgba(255,255,255,0.4)"
-                animate={{ cy: [8, 14, 8] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              />
-            </svg>
-          </motion.div>
-          <span className={styles.scrollText}>scroll</span>
-        </motion.div>
       </div>
+
+      {/* Desktop Mouse Scroll Indicator - Right side */}
+      <motion.div 
+        className={styles.desktopScrollIndicator}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 2.5 }}
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <svg width="24" height="38" viewBox="0 0 24 38" fill="none">
+            <rect x="1" y="1" width="22" height="36" rx="11" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+            <motion.circle 
+              cx="12" cy="10" r="2.5" 
+              fill="rgba(255,255,255,0.5)"
+              animate={{ cy: [10, 18, 10] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+          </svg>
+        </motion.div>
+      </motion.div>
+
+      {/* Mobile Scroll Text - Right bottom */}
+      <motion.div 
+        className={styles.mobileScrollIndicator}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 2.5 }}
+      >
+        <motion.span
+          className={styles.mobileScrollText}
+          animate={{ y: [0, 4, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          scroll down
+        </motion.span>
+      </motion.div>
 
       {/* Corner Decorations */}
       <div className={styles.cornerTL} />
