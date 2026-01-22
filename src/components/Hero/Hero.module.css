@@ -921,8 +921,9 @@
 /* Desktop Mouse Scroll Indicator */
 .desktopScrollIndicator {
   position: absolute;
-  right: 2rem;
-  bottom: 3rem;
+  right: 3rem;
+  bottom: 50%;
+  transform: translateY(50%);
   z-index: 25;
 }
 
