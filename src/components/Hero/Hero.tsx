@@ -611,6 +611,30 @@ const Hero = () => {
         >
           <Slider />
         </motion.div>
+
+        {/* Mobile Scroll Indicator */}
+        <motion.div 
+          className={styles.mobileScrollHint}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 2.5 }}
+        >
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <svg width="20" height="28" viewBox="0 0 20 28" fill="none">
+              <rect x="1" y="1" width="18" height="26" rx="9" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
+              <motion.circle 
+                cx="10" cy="8" r="2" 
+                fill="rgba(255,255,255,0.4)"
+                animate={{ cy: [8, 14, 8] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+              />
+            </svg>
+          </motion.div>
+          <span className={styles.scrollText}>scroll</span>
+        </motion.div>
       </div>
 
       {/* Corner Decorations */}
