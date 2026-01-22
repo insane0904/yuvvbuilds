@@ -634,6 +634,7 @@ const Hero = () => {
             />
           </svg>
         </motion.div>
+        <span className={styles.desktopScrollText}>scroll</span>
       </motion.div>
 
       {/* Mobile Scroll Text - Right bottom */}
