@@ -290,6 +290,131 @@ const Hero = () => {
           Crafting spaces that inspire. Building dreams into reality.
         </motion.p>
 
+        {/* Mobile Construction Animation */}
+        <div className={styles.mobileGraphic}>
+          <svg viewBox="0 0 320 100" className={styles.sceneGraphic}>
+            {/* Ground line */}
+            <motion.line 
+              x1="0" y1="85" x2="320" y2="85" 
+              stroke="rgba(255,255,255,0.2)" 
+              strokeWidth="1"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 1, delay: 1.4 }}
+            />
+            
+            {/* Factory Building */}
+            <motion.g
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.6 }}
+            >
+              {/* Main structure */}
+              <rect x="40" y="50" width="50" height="35" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5"/>
+              {/* Chimney */}
+              <rect x="75" y="35" width="8" height="20" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5"/>
+              {/* Windows */}
+              <rect x="48" y="58" width="8" height="10" fill="rgba(255,255,255,0.15)"/>
+              <rect x="62" y="58" width="8" height="10" fill="rgba(255,255,255,0.15)"/>
+              {/* Door */}
+              <rect x="54" y="72" width="10" height="13" fill="rgba(255,255,255,0.1)"/>
+            </motion.g>
+
+            {/* Warehouse */}
+            <motion.g
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.8 }}
+            >
+              {/* Main structure */}
+              <polygon points="150,45 190,45 195,55 145,55" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5"/>
+              <rect x="145" y="55" width="50" height="30" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5"/>
+              {/* Doors */}
+              <rect x="155" y="65" width="12" height="20" fill="rgba(255,255,255,0.12)"/>
+              <rect x="173" y="65" width="12" height="20" fill="rgba(255,255,255,0.12)"/>
+            </motion.g>
+
+            {/* Modern Building */}
+            <motion.g
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 2 }}
+            >
+              <rect x="250" y="35" width="35" height="50" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5"/>
+              {/* Windows grid */}
+              {[0, 1, 2, 3].map((row) => (
+                <g key={row}>
+                  <rect x="256" y={42 + row * 11} width="6" height="6" fill="rgba(255,255,255,0.15)"/>
+                  <rect x="266" y={42 + row * 11} width="6" height="6" fill="rgba(255,255,255,0.12)"/>
+                  <rect x="276" y={42 + row * 11} width="6" height="6" fill="rgba(255,255,255,0.15)"/>
+                </g>
+              ))}
+            </motion.g>
+
+            {/* Animated Airplane */}
+            <motion.g
+              initial={{ x: -50 }}
+              animate={{ x: 380 }}
+              transition={{ duration: 12, repeat: Infinity, ease: "linear", delay: 2 }}
+            >
+              {/* Body */}
+              <ellipse cx="0" cy="15" rx="18" ry="4" fill="rgba(255,255,255,0.25)"/>
+              {/* Wings */}
+              <polygon points="-5,15 5,15 8,22 -8,22" fill="rgba(255,255,255,0.2)"/>
+              {/* Tail */}
+              <polygon points="-16,12 -18,6 -12,12" fill="rgba(255,255,255,0.2)"/>
+              {/* Cockpit */}
+              <ellipse cx="12" cy="14" rx="5" ry="2.5" fill="rgba(255,255,255,0.15)"/>
+            </motion.g>
+
+            {/* Animated Truck */}
+            <motion.g
+              initial={{ x: 350 }}
+              animate={{ x: -80 }}
+              transition={{ duration: 10, repeat: Infinity, ease: "linear", delay: 1.5 }}
+            >
+              {/* Cab */}
+              <rect x="0" y="70" width="18" height="14" rx="1" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.25)" strokeWidth="0.5"/>
+              {/* Windshield */}
+              <rect x="2" y="72" width="8" height="6" fill="rgba(255,255,255,0.1)"/>
+              {/* Mixer drum */}
+              <ellipse cx="38" cy="75" rx="18" ry="10" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" strokeWidth="0.5"/>
+              {/* Drum stripes */}
+              <line x1="28" y1="70" x2="32" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+              <line x1="38" y1="68" x2="38" y2="82" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+              <line x1="48" y1="70" x2="44" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
+              {/* Wheels */}
+              <circle cx="8" cy="84" r="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
+              <circle cx="30" cy="84" r="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
+              <circle cx="46" cy="84" r="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5"/>
+            </motion.g>
+
+            {/* Smoke from factory - subtle animated puffs */}
+            <motion.circle
+              cx="79" cy="30"
+              r="4"
+              fill="rgba(255,255,255,0.08)"
+              animate={{ 
+                y: [0, -8, -12],
+                opacity: [0.1, 0.15, 0],
+                scale: [0.8, 1.2, 1.5]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeOut" }}
+            />
+            <motion.circle
+              cx="79" cy="30"
+              r="3"
+              fill="rgba(255,255,255,0.06)"
+              animate={{ 
+                y: [0, -10, -15],
+                opacity: [0.08, 0.12, 0],
+                scale: [0.6, 1, 1.3]
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeOut", delay: 1.5 }}
+            />
+          </svg>
+        </div>
+
         {/* Stats/Quick Info */}
         <motion.div 
           className={styles.quickInfo}

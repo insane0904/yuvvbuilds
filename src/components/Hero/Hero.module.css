@@ -902,6 +902,22 @@
   border-top: none;
 }
 
+/* Mobile Construction Scene - Hidden on desktop, shown on mobile */
+.mobileGraphic {
+  display: none;
+  width: 100%;
+  padding: 1rem 0;
+  margin: 0.5rem 0 1rem;
+}
+
+.sceneGraphic {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 1400px) {
   .archCircle {
@@ -986,6 +1002,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  /* Show mobile construction scene on phones */
+  .mobileGraphic {
+    display: block;
   }
 
   .nameContainer {
@@ -1107,7 +1128,7 @@
   .tagline {
     font-size: clamp(0.85rem, 3.5vw, 1rem);
     padding: 0 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     line-height: 1.5;
     max-width: 95%;
   }
